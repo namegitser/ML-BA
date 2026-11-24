@@ -1,0 +1,171 @@
+{
+  "data": {
+    "source": "http://www.minethatdata.com/Kevin_Hillstrom_MineThatData_E-MailAnalytics_DataMiningChallenge_2008.03.20.csv",
+    "source_rows": 64000,
+    "two_arm_n": 42693,
+    "train_n": 29885,
+    "test_n": 12808,
+    "treated_n": 21387,
+    "control_n": 21306,
+    "treatment_rate": 0.5009486332654065,
+    "outcome_definition": "Website visit within two weeks of the randomized email campaign"
+  },
+  "design": {
+    "seed": 42,
+    "test_fraction": 0.3,
+    "k": 1500,
+    "unit_cost": 5.0,
+    "unit_cost_is_scenario_assumption": true,
+    "max_absolute_smd": 0.014286147854542706,
+    "balance_feature_count": 8,
+    "balance_fields_under_010": 8,
+    "features": [
+      "recency",
+      "history",
+      "mens",
+      "womens",
+      "newbie",
+      "history_segment",
+      "zip_code",
+      "channel"
+    ]
+  },
+  "overall": {
+    "control_visit_rate": 0.10616727682343002,
+    "treated_visit_rate": 0.151400383410483,
+    "visit_lift": 0.045233106587052985,
+    "control_spend_per_customer": 0.6527893551112361,
+    "treated_spend_per_customer": 1.0772015710478329,
+    "spend_lift_per_customer": 0.4244122159365967
+  },
+  "calibration": {
+    "brier_uncalibrated": 0.125189580890448,
+    "brier_isotonic": 0.1254748794474973
+  },
+  "shortlists": [
+    {
+      "method": "Random selection",
+      "selected_n": 1500,
+      "treated_n": 758,
+      "control_n": 742,
+      "treated_visit_rate": 0.15303430079155672,
+      "control_visit_rate": 0.10242587601078167,
+      "visit_lift": 0.050608424780775055,
+      "visit_ci_low": 0.016927762499599562,
+      "visit_ci_high": 0.08428908706195054,
+      "treated_spend_per_customer": 1.1190501319261215,
+      "control_spend_per_customer": 0.8460916442048518,
+      "spend_lift_per_customer": 0.2729584877212696,
+      "spend_ci_low": -1.2616381286048548,
+      "spend_ci_high": 1.6067155631929675,
+      "incremental_spend": 409.4377315819044,
+      "net_contribution": -7090.562268418095,
+      "net_contribution_ci_low": -9392.45719290728,
+      "net_contribution_ci_high": -5089.926655210549
+    },
+    {
+      "method": "RFM history",
+      "selected_n": 1500,
+      "treated_n": 747,
+      "control_n": 753,
+      "treated_visit_rate": 0.1927710843373494,
+      "control_visit_rate": 0.12217795484727756,
+      "visit_lift": 0.07059312949007185,
+      "visit_ci_low": 0.03386138192153272,
+      "visit_ci_high": 0.10732487705861098,
+      "treated_spend_per_customer": 2.779892904953146,
+      "control_spend_per_customer": 0.7836653386454185,
+      "spend_lift_per_customer": 1.9962275663077276,
+      "spend_ci_low": -0.04650428540189974,
+      "spend_ci_high": 4.51005245417259,
+      "incremental_spend": 2994.3413494615916,
+      "net_contribution": -4505.658650538408,
+      "net_contribution_ci_low": -7569.75642810285,
+      "net_contribution_ci_high": -734.9213187411148
+    },
+    {
+      "method": "Calibrated expected value",
+      "selected_n": 1500,
+      "treated_n": 736,
+      "control_n": 764,
+      "treated_visit_rate": 0.23097826086956522,
+      "control_visit_rate": 0.168848167539267,
+      "visit_lift": 0.0621300933302982,
+      "visit_ci_low": 0.021695163366881084,
+      "visit_ci_high": 0.10256502329371532,
+      "treated_spend_per_customer": 1.6444565217391307,
+      "control_spend_per_customer": 0.8051832460732985,
+      "spend_lift_per_customer": 0.8392732756658322,
+      "spend_ci_low": -0.6553820566810836,
+      "spend_ci_high": 2.68540251180856,
+      "incremental_spend": 1258.9099134987482,
+      "net_contribution": -6241.090086501252,
+      "net_contribution_ci_low": -8483.073085021624,
+      "net_contribution_ci_high": -3471.8962322871603
+    },
+    {
+      "method": "X-learner uplift",
+      "selected_n": 1500,
+      "treated_n": 757,
+      "control_n": 743,
+      "treated_visit_rate": 0.18626155878467635,
+      "control_visit_rate": 0.09152086137281291,
+      "visit_lift": 0.09474069741186343,
+      "visit_ci_low": 0.060090136741106415,
+      "visit_ci_high": 0.12939125808262045,
+      "treated_spend_per_customer": 0.897107001321004,
+      "control_spend_per_customer": 0.25584118438761777,
+      "spend_lift_per_customer": 0.6412658169333862,
+      "spend_ci_low": -0.3565061592032017,
+      "spend_ci_high": 2.2540722609613995,
+      "incremental_spend": 961.8987254000793,
+      "net_contribution": -6538.1012745999205,
+      "net_contribution_ci_low": -8034.7592388048015,
+      "net_contribution_ci_high": -4118.891608557901
+    }
+  ],
+  "overlap": {
+    "calibrated_ev_x_xlearner_n": 628,
+    "calibrated_ev_x_xlearner_pct_of_k": 0.4186666666666667,
+    "jaccard": 0.26475548060708265
+  },
+  "profiles": [
+    {
+      "method": "Random",
+      "n": 1500,
+      "history_mean": 236.8843533333333,
+      "recency_mean_months": 5.740666666666667,
+      "womens_buyer_pct": 55.93333333333334,
+      "multichannel_pct": 11.666666666666666
+    },
+    {
+      "method": "RFM",
+      "n": 1500,
+      "history_mean": 782.7958333333333,
+      "recency_mean_months": 3.8566666666666665,
+      "womens_buyer_pct": 68.4,
+      "multichannel_pct": 38.800000000000004
+    },
+    {
+      "method": "Calibrated EV",
+      "n": 1500,
+      "history_mean": 618.7555066666666,
+      "recency_mean_months": 3.734,
+      "womens_buyer_pct": 93.26666666666667,
+      "multichannel_pct": 33.0
+    },
+    {
+      "method": "X-learner",
+      "n": 1500,
+      "history_mean": 408.9410533333334,
+      "recency_mean_months": 6.238,
+      "womens_buyer_pct": 97.86666666666667,
+      "multichannel_pct": 19.333333333333332
+    }
+  ],
+  "interpretation": {
+    "economic_metric": "Incremental gross spend less assumed contact cost; not accounting profit.",
+    "source_intervention": "Randomized email. A catalog/voucher campaign is an external-validity assumption.",
+    "uncertainty": "Visit intervals use a normal approximation; spend intervals use a stratified percentile bootstrap."
+  }
+}
